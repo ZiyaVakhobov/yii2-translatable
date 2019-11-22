@@ -80,8 +80,8 @@ foreach ($languageList as $lang) {
 
 
 # Forms
-### If you are using Form instead of ActiveRecord. It is same.
-
+### If you are using Form instead of ActiveRecord. You need to set type to Model.
+By default it is TYPE_ACTIVE_RECORD, so you need to set TYPE_MODEL. See below how it is done
 ```
 class ArticleForm extends Model
 {
@@ -93,6 +93,7 @@ class ArticleForm extends Model
             'translatable'=>[
                 'class' => TranslatableBehaviour::className(),
                 'attributes' => ['content'],
+                'type' => TranslatableBehaviour::TYPE_MODEL,
             ],
         ];
     }

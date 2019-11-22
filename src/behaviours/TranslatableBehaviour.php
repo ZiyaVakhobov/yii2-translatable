@@ -15,7 +15,10 @@ use yii\validators\StringValidator;
 
 class TranslatableBehaviour extends Behavior
 {
+    public const TYPE_ACTIVE_RECORD = 'active_record';
+    public const TYPE_MODEL = 'model';
     public $attributes;
+    public $type;
 
     public function events()
     {
@@ -52,9 +55,12 @@ class TranslatableBehaviour extends Behavior
                     $this->owner->$attribute = new Translated($this->owner, $attribute);
                 }
             } else {
-                foreach ($this->attributes as $attribute) {
-                    $this->owner->$attribute = new Translated($this->owner, $attribute);
+                if ($this->type === self::TYPE_MODEL) {
+                    foreach ($this->attributes as $attribute) {
+                        $this->owner->$attribute = new Translated($this->owner, $attribute);
+                    }
                 }
+
             }
         }
     }
