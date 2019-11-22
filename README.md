@@ -77,3 +77,23 @@ foreach ($languageList as $lang) {
             ->label($model->getAttributeLabel('name') . "_{$lang}");
 }
 ```
+
+
+# Forms
+### If you are using Form instead of ActiveRecord. It is same.
+
+```
+class ArticleForm extends Model
+{
+    
+    public $content;
+    public function behaviors()
+    {
+        return [
+            'translatable'=>[
+                'class' => TranslatableBehaviour::className(),
+                'attributes' => ['content'],
+            ],
+        ];
+    }
+```
