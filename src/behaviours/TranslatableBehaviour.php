@@ -44,7 +44,6 @@ class TranslatableBehaviour extends Behavior
 
     public function translatableAttribute()
     {
-        /**@var $this ->>owner Model * */
         if ($this->owner instanceof Model) {
             if ($this->owner->hasErrors()) {
                 foreach ($this->attributes as $attribute) {
