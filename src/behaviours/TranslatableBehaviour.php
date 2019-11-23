@@ -23,13 +23,9 @@ class TranslatableBehaviour extends Behavior
     public function events()
     {
         $events = [];
-
-        $events[Model::EVENT_AFTER_VALIDATE] = 'translatableAttribute';
-        $events[Model::EVENT_BEFORE_VALIDATE] = 'translatableAttribute';
         $events[BaseActiveRecord::EVENT_AFTER_VALIDATE] = 'translatableAttribute';
         $events[BaseActiveRecord::EVENT_AFTER_FIND] = 'afterFind';
         $events[BaseActiveRecord::EVENT_INIT] = 'afterFind';
-
         return $events;
     }
 
