@@ -1,7 +1,7 @@
 # Translatable
 ## You Have to use `PHP 7.1` at least
 ## Widget for Yii2 framework projects. To Json Translate.
-`composer require ziya/yii2-translate "^0.2"`
+`composer require ziya/yii2-translate "^0.2.1"`
 
 ##  Migrations
 `Attribute that you want translatable should be json field`
